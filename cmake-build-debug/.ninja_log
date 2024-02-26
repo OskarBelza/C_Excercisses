@@ -1,0 +1,24 @@
+# ninja log v5
+0	44	7306754470271039	CMakeFiles/new_target.dir/main2.c.obj	6a7c57d676967990
+45	100	7306754470803296	new_target.exe	7c7fb354184b93fb
+4	49	7306776001331016	CMakeFiles/Zajecia_C.dir/Zad2.c.obj	901e71cab154ab58
+1	36	7306758852433006	CMakeFiles/Zajecia_C.dir/main.c.obj	728ff51cbb76c493
+2	45	7306791497474865	CMakeFiles/Zajecia_C.dir/Zad1.c.obj	1337daba942e88c0
+0	48	7306754508354924	CMakeFiles/Zajecia_C.dir/main2.c.obj	45bc20164149a1a3
+0	72	7306796266306069	build.ninja	589e4b80592adc35
+48	96	7306795829622081	Zajecia_C.exe	c098f42245eb4308
+1	40	7306788329501343	CMakeFiles/Zajecia_C.dir/Zad3.c.obj	cb0d07c88c2e82c4
+4	50	7306790345650101	CMakeFiles/Zajecia_C.dir/Zad4.c.obj	5abcdf613bceaaa5
+2	47	7306795829161272	CMakeFiles/Zajecia_C.dir/Zad5.c.obj	e8274f773583e5ee
+4	52	7306806023867136	CMakeFiles/Zajecia_C.dir/Zad2.c.obj	901e71cab154ab58
+1	53	7306806023877132	CMakeFiles/Zajecia_C.dir/Zad1.c.obj	1337daba942e88c0
+6	53	7306806023867136	CMakeFiles/Zajecia_C.dir/Zad3.c.obj	cb0d07c88c2e82c4
+10	56	7306806023907184	CMakeFiles/Zajecia_C.dir/Zad5.c.obj	e8274f773583e5ee
+8	65	7306806024012885	CMakeFiles/Zajecia_C.dir/Zad6.c.obj	a48bde31519d4fd8
+65	113	7306806024469775	Zajecia_C.exe	efa43502ecfc9921
+1	49	7306822463385149	CMakeFiles/Zajecia_C.dir/Zad6.c.obj	a48bde31519d4fd8
+50	99	7306822463871324	Zajecia_C.exe	efa43502ecfc9921
+1	48	7306827975583593	CMakeFiles/Zajecia_C.dir/Zad6.c.obj	a48bde31519d4fd8
+48	96	7306827976058191	Zajecia_C.exe	efa43502ecfc9921
+1	42	7306829406589990	CMakeFiles/Zajecia_C.dir/Zad6.c.obj	a48bde31519d4fd8
+42	90	7306829407051368	Zajecia_C.exe	efa43502ecfc9921
