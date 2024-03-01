@@ -1,3 +1,13 @@
-C:/Users/oskar/CLionProjects/Zajecia_C/cmake-build-debug/CMakeFiles/Zajecia_C.dir
-C:/Users/oskar/CLionProjects/Zajecia_C/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/oskar/CLionProjects/Zajecia_C/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/48512/CLionProjects/C_Excercisses/cmake-build-debug/CMakeFiles/Zad_1_1.dir
+C:/Users/48512/CLionProjects/C_Excercisses/cmake-build-debug/CMakeFiles/Zad_1_2.dir
+C:/Users/48512/CLionProjects/C_Excercisses/cmake-build-debug/CMakeFiles/Zad_1_3.dir
+C:/Users/48512/CLionProjects/C_Excercisses/cmake-build-debug/CMakeFiles/Zad_1_4.dir
+C:/Users/48512/CLionProjects/C_Excercisses/cmake-build-debug/CMakeFiles/Zad_1_5.dir
+C:/Users/48512/CLionProjects/C_Excercisses/cmake-build-debug/CMakeFiles/Zad_1_6.dir
+C:/Users/48512/CLionProjects/C_Excercisses/cmake-build-debug/CMakeFiles/Zad_2_1.dir
+C:/Users/48512/CLionProjects/C_Excercisses/cmake-build-debug/CMakeFiles/Zad_2_2.dir
+C:/Users/48512/CLionProjects/C_Excercisses/cmake-build-debug/CMakeFiles/Zad_2_3.dir
+C:/Users/48512/CLionProjects/C_Excercisses/cmake-build-debug/CMakeFiles/Zad_2_4.dir
+C:/Users/48512/CLionProjects/C_Excercisses/cmake-build-debug/CMakeFiles/Zad_2_5.dir
+C:/Users/48512/CLionProjects/C_Excercisses/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/48512/CLionProjects/C_Excercisses/cmake-build-debug/CMakeFiles/rebuild_cache.dir

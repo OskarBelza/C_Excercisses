@@ -1,12 +1,16 @@
 cmake_minimum_required(VERSION 3.27)
-project(Zajecia_C C)
+project(../C_Excercisses C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(Zajecia_C Zad1.c
-        Zad2.c
-        Zad3.c
-        Zad4.c
-        Zad5.c
-        Zad6.c)
-
+add_executable(Zad_1_1 ../C_Excercisses/Zadania_1/Zad_1.c)
+add_executable(Zad_1_2 ../C_Excercisses/Zadania_1/Zad_2.c)
+add_executable(Zad_1_3 ../C_Excercisses/Zadania_1/Zad_3.c)
+add_executable(Zad_1_4 ../C_Excercisses/Zadania_1/Zad_4.c)
+add_executable(Zad_1_5 ../C_Excercisses/Zadania_1/Zad_5.c)
+add_executable(Zad_1_6 ../C_Excercisses/Zadania_1/Zad_6.c)
+add_executable(Zad_2_1 ../C_Excercisses/Zadania_2/Zad_1.c)
+add_executable(Zad_2_2 ../C_Excercisses/Zadania_2/Zad_2.c)
+add_executable(Zad_2_3 ../C_Excercisses/Zadania_2/Zad_3.c)
+add_executable(Zad_2_4 ../C_Excercisses/Zadania_2/Zad_4.c)
+add_executable(Zad_2_5 ../C_Excercisses/Zadania_2/Zad_5.c)
