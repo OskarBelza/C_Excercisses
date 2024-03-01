@@ -1,3 +1,0 @@
-C:/Users/oskar/CLionProjects/Zajecia_C/cmake-build-debug/CMakeFiles/Zajecia_C.dir
-C:/Users/oskar/CLionProjects/Zajecia_C/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/oskar/CLionProjects/Zajecia_C/cmake-build-debug/CMakeFiles/rebuild_cache.dir
