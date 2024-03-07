@@ -3,7 +3,6 @@ project(../C_Excercisses C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(Zad_1_1 ../C_Excercisses/Zadania_1/Zad_1.c)
 add_executable(Zad_1_2 ../C_Excercisses/Zadania_1/Zad_2.c)
 add_executable(Zad_1_3 ../C_Excercisses/Zadania_1/Zad_3.c)
 add_executable(Zad_1_4 ../C_Excercisses/Zadania_1/Zad_4.c)
@@ -14,3 +13,5 @@ add_executable(Zad_2_2 ../C_Excercisses/Zadania_2/Zad_2.c)
 add_executable(Zad_2_3 ../C_Excercisses/Zadania_2/Zad_3.c)
 add_executable(Zad_2_4 ../C_Excercisses/Zadania_2/Zad_4.c)
 add_executable(Zad_2_5 ../C_Excercisses/Zadania_2/Zad_5.c)
+add_executable(Zad_3_1 ../C_Excercisses/Zadania_3/Zad_1.c)
+add_executable(Zad_3_2 ../C_Excercisses/Zadania_3/Zad_2.c)
