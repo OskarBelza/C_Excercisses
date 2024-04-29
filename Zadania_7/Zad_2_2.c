@@ -3,7 +3,6 @@
 #include <string.h>
 #include <ctype.h>
 
-const int borderValue[] = {12, 13, 14};
 const char polishShorts[] = {'c', 'z', 'n'};
 const char englishShorts[] = {'r', 'g', 'b'};
 
@@ -41,82 +40,63 @@ char* getLine(FILE *file) {
     }
 }
 
-int gameNumber(const char *line){
-    int number = 0;
-    // We iterate through start of the line until we meet :
-    // Which is where game number ends
-    for(int i = 0; i != ':'; i++){
-        // We extract our game number
-        if(isdigit(line[i]) && number == 0){
-            number = line[i] - '0';
-        }
-        // Condition to properly extract double and more digits
-        else if(isdigit(line[i] && number != 0)) {
-            number *= 10;
-            number += line[i] - '0';
-        }
-    }
-    return number;
-}
-
 int checkDices(const char *line){
     int i = 0;
     int tempNumber = 0;
-    // We skip game to start reading colors values
-    // Game always end after : so we choose this in our while condition
+    // We set our maxes vales as 0 in the beginning
+    int maxRed = 0;
+    int maxGreen = 0;
+    int maxBlue = 0;
+    // We skip game number part
     while(line[i] != ':'){
         i++;
     }
     while(line[i] != '\0'){
-        // We check if read value is digit and if our temp number is empty
-        // If yes we assign this digit tou our temp variable
+        // We extract number before color
         if(isdigit(line[i]) && tempNumber == 0){
             tempNumber = line[i] - '0';
         }
-        // If it is a digit but temp is not empty we have to multiply our temp and add new digit
-        // We're doing this to correctly read double and more digits
+        // Condition to properly extract double and more digits
         else if(isdigit(line[i]) && tempNumber != 0){
             tempNumber *= 10;
             tempNumber += line[i] - '0';
         }
         // We check if color after our digit is red
         else if(line[i] == englishShorts[0]){
-            // If yes we check our borderValue condition
-            if(tempNumber > borderValue[0]){
-                // If it is greater we return 0 because it means that we exceeded our value
-                return 0;
+            // If yes we check is it greater than our max
+            if(tempNumber > maxGreen){
+                // If yes we change our max to this new digit
+                maxGreen = tempNumber;
             }
-            // We skip rest of the letters from word red and 0'ed temp number
-            // So we can read the next value correctly
+            // We skip rest of the letters from word red an 0 our temp value
             i +=2;
             tempNumber = 0;
         }
-        // The same as previous but for color green
+        // Same as previous but for color green
         else if(line[i] == englishShorts[1]){
-            if(tempNumber > borderValue[1]){
-                return 0;
+            if(tempNumber > maxRed){
+                maxRed = tempNumber;
             }
             i += 4;
             tempNumber = 0;
         }
-        // The same as previous but for color blue
+        // Same as previous but for color blue
         else if(line[i] == englishShorts[2]){
-            if(tempNumber > borderValue[2]){
-                return 0;
+            if(tempNumber > maxBlue){
+                maxBlue = tempNumber;
             }
             i += 3;
             tempNumber = 0;
         }
-        // We iterate through char table so we have to increase our index on the end
+        // We iterate through char table, so we have to increase our index on the end
         i++;
     }
-    // If we didn't return 0 through our while we check tha game number extract this value
-    // and return as our result
-    return gameNumber(line);
+    // We return result of multiplication of our 3 maxes
+    return maxBlue*maxRed*maxGreen;
 }
 
 int main() {
-    FILE *file = fopen("C:\\Users\\48512\\CLionProjects\\C_Excercisses\\Zadania_7\\Data_2.txt", "r");
+    FILE *file = fopen("C:\\Users\\48512\\CLionProjects\\C_Excercisses\\Zadania_7\\Data_2_test.txt", "r");
     if (file == NULL) {
         perror("File opening error");
         return EXIT_FAILURE;
@@ -124,7 +104,7 @@ int main() {
 
     // We read our file line after line with our function getLine
     char *line;
-    // Sum of games number that check condition
+    // Sum of multiplication of maxes
     int gamesSum = 0;
     while ((line = getLine(file)) != NULL) {
         gamesSum += checkDices(line);
