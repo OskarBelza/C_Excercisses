@@ -216,7 +216,7 @@ int numbersExtraction(const char *line){
 }
 
 int main() {
-    FILE *file = fopen("C:\\Users\\48512\\CLionProjects\\C_Excercisses\\Zadania_7\\Data_1.txt", "r");
+    FILE *file = fopen("..\\Zadania_7\\Data_1.txt", "r");
     if (file == NULL) {
         perror("File opening error");
         return EXIT_FAILURE;

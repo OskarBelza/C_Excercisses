@@ -96,7 +96,7 @@ int checkDices(const char *line){
 }
 
 int main() {
-    FILE *file = fopen("C:\\Users\\48512\\CLionProjects\\C_Excercisses\\Zadania_7\\Data_2_test.txt", "r");
+    FILE *file = fopen("..\\Zadania_7\\Data_2.txt", "r");
     if (file == NULL) {
         perror("File opening error");
         return EXIT_FAILURE;

@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 3.27)
 project(../C_Excercisses C)
 
 set(CMAKE_C_STANDARD 11)
+set(CMAKE_CXX_STANDARD 11)
+
+enable_language(CXX)
 
 add_executable(Zad_1_1 ../C_Excercisses/Zadania_1/Zad_1.c)
 add_executable(Zad_1_2 ../C_Excercisses/Zadania_1/Zad_2.c)
@@ -32,3 +35,16 @@ add_executable(Zad_7_1 ../C_Excercisses/Zadania_7/Zad_1.c)
 add_executable(Zad_7_1_2 ../C_Excercisses/Zadania_7/Zad_1_2.c)
 add_executable(Zad_7_2 ../C_Excercisses/Zadania_7/Zad_2.c)
 add_executable(Zad_7_2_2 ../C_Excercisses/Zadania_7/Zad_2_2.c)
+
+set_source_files_properties(
+        ../C_Excercisses/C++/Zad_7_1.cpp
+        ../C_Excercisses/C++/Zad_7_1_2.cpp
+        ../C_Excercisses/C++/Zad_7_2.cpp
+        ../C_Excercisses/C++/Zad_7_2_2.cpp
+        PROPERTIES LANGUAGE CXX
+)
+
+add_executable(Zad_7_1_C_plus ../C_Excercisses/C++/Zad_7_1.cpp)
+add_executable(Zad_7_1_2_C_plus ../C_Excercisses/C++/Zad_7_1_2.cpp)
+add_executable(Zad_7_2_C_plus ../C_Excercisses/C++/Zad_7_2.cpp)
+add_executable(Zad_7_2_2_C_plus ../C_Excercisses/C++/Zad_7_2_2.cpp)
