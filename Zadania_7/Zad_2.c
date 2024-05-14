@@ -45,13 +45,13 @@ int gameNumber(const char *line){
     int number = 0;
     // We iterate through start of the line until we meet :
     // Which is where game number ends
-    for(int i = 0; i != ':'; i++){
+    for(int i = 0; line[i] != ':'; i++){
         // We extract our game number
         if(isdigit(line[i]) && number == 0){
             number = line[i] - '0';
         }
-        // Condition to properly extract double and more digits
-        else if(isdigit(line[i] && number != 0)) {
+            // Condition to properly extract double and more digits
+        else if(isdigit(line[i]) && number != 0) {
             number *= 10;
             number += line[i] - '0';
         }
@@ -107,7 +107,7 @@ int checkDices(const char *line){
             i += 3;
             tempNumber = 0;
         }
-        // We iterate through char table so we have to increase our index on the end
+        // We iterate through char table, so we have to increase our index on the end
         i++;
     }
     // If we didn't return 0 through our while we check tha game number extract this value

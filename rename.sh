@@ -1,14 +1,5 @@
 #!/bin/bash
 
-rename_files_recursively() {
-    find . -type f -name '*.cpp' | while read -r file; do
-        relative_path=$(dirname "$file")
-        newname="$relative_path/$(basename "$file" .cpp).c"
-        mv "$file" "$newname"
-        echo "Renamed: $file to $newname"
-    done
-}
-
 remove_polish_characters() {
     find . -depth -name '*[ąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*' | while read -r file; do
         newname=$(echo "$file" | iconv -f UTF-8 -t ASCII//TRANSLIT | sed 'y/ąćęłńóśźżĄĆĘŁŃÓŚŹŻ/acelnoszzACELNOSZZ/')

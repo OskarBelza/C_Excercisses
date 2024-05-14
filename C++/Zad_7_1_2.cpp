@@ -2,83 +2,177 @@
 #include <fstream>
 #include <string>
 #include <cctype>
-#include <unordered_map>
+
 using namespace std;
 
-unordered_map<string, int> numberWords = {
-        {"one", 1}, {"two", 2}, {"three", 3}, {"four", 4},
-        {"five", 5}, {"six", 6}, {"seven", 7}, {"eight", 8}, {"nine", 9}
-};
-
-int getNumber(const string &word) {
-    auto it = numberWords.find(word);
-    return (it != numberWords.end()) ? it->second : -1;
+int wordToNumber(const string &word) {
+    if (word == "zero") return 0;
+    if (word == "one") return 1;
+    if (word == "two") return 2;
+    if (word == "three") return 3;
+    if (word == "four") return 4;
+    if (word == "five") return 5;
+    if (word == "six") return 6;
+    if (word == "seven") return 7;
+    if (word == "eight") return 8;
+    if (word == "nine") return 9;
+    return -1;
 }
 
 int numbersExtraction(const string &line) {
     int firstNumber = -1;
     int lastNumber = -1;
+    int temp;
 
-    // Finding the first number
-    for(size_t i = 0; i < line.size(); i++) {
-        if(isdigit(line[i])) {
-            firstNumber = line[i] - '0';
+    for (int i = 0; i < line.size(); i++) {
+        if (isdigit(line[i])) {
+            temp = line[i] - '0';
+            firstNumber = temp;
             break;
         } else {
-            string word;
-            for(int j = i; j < line.size(); j++) {
-                word += tolower(line[j]);
-                int num = getNumber(word);
-                if(num != -1) {
-                    firstNumber = num;
+            switch (line[i]) {
+                case 'o':
+                    temp = wordToNumber(line.substr(i, 3));
+                    if (temp != -1) {
+                        firstNumber = temp;
+                        break;
+                    }
+                case 't':
+                    temp = wordToNumber(line.substr(i, 3));
+                    if (temp != -1) {
+                        firstNumber = temp;
+                        break;
+                    }
+                    temp = wordToNumber(line.substr(i, 5));
+                    if (temp != -1) {
+                        firstNumber = temp;
+                        break;
+                    }
                     break;
-                }
+                case 'f':
+                    temp = wordToNumber(line.substr(i, 4));
+                    if (temp != -1) {
+                        firstNumber = temp;
+                        break;
+                    }
+                    temp = wordToNumber(line.substr(i, 4));
+                    if (temp != -1) {
+                        firstNumber = temp;
+                        break;
+                    }
+                    break;
+                case 's':
+                    temp = wordToNumber(line.substr(i, 3));
+                    if (temp != -1) {
+                        firstNumber = temp;
+                        break;
+                    }
+                    temp = wordToNumber(line.substr(i, 5));
+                    if (temp != -1) {
+                        firstNumber = temp;
+                        break;
+                    }
+                    break;
+                case 'e':
+                    temp = wordToNumber(line.substr(i, 5));
+                    if (temp != -1) {
+                        firstNumber = temp;
+                        break;
+                    }
+                    break;
+                case 'n':
+                    temp = wordToNumber(line.substr(i, 4));
+                    if (temp != -1) {
+                        firstNumber = temp;
+                        break;
+                    }
+                    break;
             }
-            if(firstNumber != -1) {
-                break;
-            }
+        }
+        if (firstNumber != -1) {
+            break;
         }
     }
 
-    // Finding the last number
-    for(int i = line.size() - 1; i >= 0; i--) {
-        if(isdigit(line[i])) {
-            lastNumber = line[i] - '0';
+    // Szukanie ostatniej liczby od końca
+    for (int i = line.size() - 1; i >= 0; i--) {
+        if (isdigit(line[i])) {
+            temp = line[i] - '0';
+            lastNumber = temp;
             break;
         } else {
-            string word;
-            for(int j = i; j >= 0; j--) {
-                word = tolower(line[j]) + word;
-                int num = getNumber(word);
-                if(num != -1) {
-                    lastNumber = num;
+            switch (line[i]) {
+                case 'o':
+                    temp = wordToNumber(line.substr(i, 3));
+                    if (temp != -1) {
+                        lastNumber = temp;
+                        break;
+                    }
                     break;
-                }
+                case 't':
+                    temp = wordToNumber(line.substr(i, 3));
+                    if (temp != -1) {
+                        lastNumber = temp;
+                        break;
+                    }
+                    temp = wordToNumber(line.substr(i, 5));
+                    if (temp != -1) {
+                        lastNumber = temp;
+                        break;
+                    }
+                    break;
+                case 'f':
+                    temp = wordToNumber(line.substr(i, 4));
+                    if (temp != -1) {
+                        lastNumber = temp;
+                        break;
+                    }
+                    temp = wordToNumber(line.substr(i, 4));
+                    if (temp != -1) {
+                        lastNumber = temp;
+                        break;
+                    }
+                    break;
+                case 's':
+                    temp = wordToNumber(line.substr(i, 3));
+                    if (temp != -1) {
+                        lastNumber = temp;
+                        break;
+                    }
+                    temp = wordToNumber(line.substr(i, 5));
+                    if (temp != -1) {
+                        lastNumber = temp;
+                        break;
+                    }
+                    break;
+                case 'e':
+                    temp = wordToNumber(line.substr(i, 5));
+                    if (temp != -1) {
+                        lastNumber = temp;
+                        break;
+                    }
+                    break;
+                case 'n':
+                    temp = wordToNumber(line.substr(i, 4));
+                    if (temp != -1) {
+                        lastNumber = temp;
+                        break;
+                    }
+                    break;
             }
-            if(lastNumber != -1) {
-                break;
-            }
+        }
+        if (lastNumber != -1) {
+            break;
         }
     }
 
-    // If we didn't find any number we return 0
-    if(firstNumber == -1 && lastNumber == -1) {
-        return 0;
-    }
-
-    // If we had only one digit in line we have to assign first number to the last number also
-    if(lastNumber == -1) {
-        lastNumber = firstNumber;
-    }
-
-    // Return the sum of the first and last numbers
-    return (firstNumber * 10) + lastNumber;
+    return (firstNumber + lastNumber == -2) ? 0 : (firstNumber * 10) + lastNumber;
 }
 
 int main() {
-    ifstream file("..\\Zadania_7\\Data_1_test.txt");
+    ifstream file("..\\Zadania_7\\Data_1.txt");
     if (!file.is_open()) {
-        cerr << "File opening error" << endl;
+        cerr << "File opening error\n";
         return EXIT_FAILURE;
     }
 
