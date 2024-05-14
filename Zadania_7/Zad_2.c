@@ -50,7 +50,6 @@ int gameNumber(const char *line){
         if(isdigit(line[i]) && number == 0){
             number = line[i] - '0';
         }
-            // Condition to properly extract double and more digits
         else if(isdigit(line[i]) && number != 0) {
             number *= 10;
             number += line[i] - '0';
@@ -73,13 +72,13 @@ int checkDices(const char *line){
         if(isdigit(line[i]) && tempNumber == 0){
             tempNumber = line[i] - '0';
         }
-        // If it is a digit but temp is not empty we have to multiply our temp and add new digit
-        // We're doing this to correctly read double and more digits
+            // If it is a digit but temp is not empty we have to multiply our temp and add new digit
+            // We're doing this to correctly read double and more digits
         else if(isdigit(line[i]) && tempNumber != 0){
             tempNumber *= 10;
             tempNumber += line[i] - '0';
         }
-        // We check if color after our digit is red
+            // We check if color after our digit is red
         else if(line[i] == englishShorts[0]){
             // If yes we check our borderValue condition
             if(tempNumber > borderValue[0]){
@@ -91,7 +90,7 @@ int checkDices(const char *line){
             i +=2;
             tempNumber = 0;
         }
-        // The same as previous but for color green
+            // The same as previous but for color green
         else if(line[i] == englishShorts[1]){
             if(tempNumber > borderValue[1]){
                 return 0;
@@ -99,7 +98,7 @@ int checkDices(const char *line){
             i += 4;
             tempNumber = 0;
         }
-        // The same as previous but for color blue
+            // The same as previous but for color blue
         else if(line[i] == englishShorts[2]){
             if(tempNumber > borderValue[2]){
                 return 0;
